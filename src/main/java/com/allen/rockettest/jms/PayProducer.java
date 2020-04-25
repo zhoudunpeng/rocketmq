@@ -7,6 +7,8 @@ import org.springframework.stereotype.Component;
 /**
  * @author sesshomaru
  * @date 2020/4/20 21:28
+ *
+ * 普通生产者
  */
 @Component
 public class PayProducer {

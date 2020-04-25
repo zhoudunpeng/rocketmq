@@ -21,10 +21,11 @@ import java.util.HashMap;
  * 异步发送消息
  *
  *  使用场景大量消息需要快速处理但是并不在乎发送结果的情况
+ *  对RT时间敏感度，可以支持更高的并发，回调成功触发相对应的业务，比如注册成功后通知积分系统发放优惠券
  *
  */
 @RestController
-public class PayController1 {
+public class AsynController {
 
     @Autowired
     private PayProducer payProducer;

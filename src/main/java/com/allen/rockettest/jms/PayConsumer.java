@@ -43,8 +43,8 @@ public class PayConsumer {
             @Override
             public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> list, ConsumeConcurrentlyContext consumeConcurrentlyContext) {
                 MessageExt msg = list.get(0);
-                int times = msg.getReconsumeTimes();
-                System.out.println("重试次数: "+ times);
+               // int times = msg.getReconsumeTimes();
+               // System.out.println("重试次数: "+ times);
                 try {
 
                     System.out.printf("%s Receive New Messages: %s %n",
@@ -54,21 +54,21 @@ public class PayConsumer {
                     String tags = msg.getTags();
                     String keys = msg.getKeys();
 
-                    if(keys.equalsIgnoreCase("zdp666")){
+                /*    if(keys.equalsIgnoreCase("zdp666")){
                         throw new Exception();
-                    }
+                    }*/
 
                     System.out.println("topic=" + topic + ", tags=" + tags + ", keys=" + keys + ", msg=" + body);
                     return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
                 } catch (Exception e) {
 
                     //消费端重试次数超过2次，不再重试开始人工干预(这个重试次数可以通过实际业务上最多重试几次才完成消费来设定)
-                    if(times > 2){
+        /*            if(times > 2){
                         //todo 记录数据库，发短信通知开发人员或者运营人员
                         System.out.println("重试次数超过2次,记录数据库，发短信通知开发人员或者运营人员");
                         return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
                     }
-
+*/
                     e.printStackTrace();
                     return ConsumeConcurrentlyStatus.RECONSUME_LATER;
                 }

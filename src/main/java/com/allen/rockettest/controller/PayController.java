@@ -18,6 +18,7 @@
 // * @date 2020/4/20 21:38
 // *
 // * 同步发送消息
+//  应用场景
 // */
 //@RestController
 //public class PayController {
