@@ -30,7 +30,7 @@ public class TxController {
         TransactionSendResult sendResult = transactionProducer.getProducer().sendMessageInTransaction(message, otherParam);
 
         System.out.printf("发送结果 %s, msg=%s", sendResult.getSendStatus(), sendResult.toString()+"\n");
-        System.out.println(1231);
+        System.out.println(1123);
         return new HashMap<>();
     }
 }
