@@ -45,13 +45,13 @@ public class PeiZhiConsumer {
                 MessageExt msg = list.get(0);
                 try {
 
-                    System.out.printf("%s Receive New Messages: %s %n",
-                            Thread.currentThread().getName(), new String(list.get(0).getBody()));
+                  /*  System.out.printf("%s Receive New Messages: %s %n",
+                            Thread.currentThread().getName(), new String(list.get(0).getBody()));*/
                     String topic = msg.getTopic();
                     String body = new String(msg.getBody(), "utf-8");
                     String tags = msg.getTags();
                     String keys = msg.getKeys();
-                    System.out.println("topic=" + topic + ", tags=" + tags + ", keys=" + keys + ", msg=" + body);
+                    System.out.println("消费成功 topic=" + topic + ", tags=" + tags + ", keys=" + keys + ", msg=" + body);
                     return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
                 } catch (Exception e) {
                     e.printStackTrace();
